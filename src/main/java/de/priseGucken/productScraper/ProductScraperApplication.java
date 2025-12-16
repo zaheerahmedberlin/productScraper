@@ -1,4 +1,4 @@
-package de.prise.gucken.productScraper;
+package de.priseGucken.productScraper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
