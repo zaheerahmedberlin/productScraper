@@ -7,6 +7,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -16,7 +17,10 @@ import java.util.List;
 @Service
 public class Home24Service {
 
-    private static final String BASE_URL = "https://www.home24.de/search?query=";
+    @Value("${scraper.home24-base-url}")
+    private String BASE_URL;
+
+  //  private static final String BASE_URL = "https://www.home24.de/search?query=";
 
     private Home24Repo home24Repo;
 
@@ -67,7 +71,7 @@ public class Home24Service {
 
     private void saveAll(List<Home24Entity> home24Entities){
         home24Entities.forEach(x-> System.out.println(x.toString()));
-       // home24Repo.saveAllAndFlush(home24Entities);
+        home24Repo.saveAllAndFlush(home24Entities);
     }
 }
 
