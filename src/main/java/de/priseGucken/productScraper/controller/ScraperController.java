@@ -39,7 +39,7 @@ public class ScraperController {
     }
 
 
-    @GetMapping("/getMirjan")
+    @GetMapping("/mirjan")
     public List<Mirjan24Entity> getMirjanProducts(@RequestParam String category,String pages) throws IOException {
         return  mirjan24Service.scrapeProducts(category,pages);
     }

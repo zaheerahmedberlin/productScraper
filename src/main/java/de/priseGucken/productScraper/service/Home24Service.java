@@ -70,7 +70,6 @@ public class Home24Service {
     }
 
     private void saveAll(List<Home24Entity> home24Entities){
-        home24Entities.forEach(x-> System.out.println(x.toString()));
         home24Repo.saveAllAndFlush(home24Entities);
     }
 }
